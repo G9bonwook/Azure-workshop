@@ -13,10 +13,10 @@ Original file is located at
 !pip install tiktoken
 
 import os
-os.environ["OPENAI_API_KEY"] = "CRtqYIcoJ3ROkM7e75AAvWS0rSWGJKMmmAF8JLYnNycx3wOBjx68JQQJ99BDACYeBjFXJ3w3AAABACOGx1tK"
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://gacheon-llm-00001.openai.azure.com"
-os.environ["OPENAI_API_TYPE"] = "azure"
-os.environ["OPENAI_API_VERSION"] = "2024-02-01"
+os.environ["OPENAI_API_KEY"] = "{YOUR_API_KEY}"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "YOUR_API_ENDPOINT"
+os.environ["OPENAI_API_TYPE"] = "{YOUR_API_TYPE}"
+os.environ["OPENAI_API_VERSION"] = "{YOUR_API_VERSION}"
 
 from langchain.embeddings import AzureOpenAIEmbeddings
 
