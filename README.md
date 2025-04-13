@@ -1,6 +1,14 @@
-# Azure-workshop
-가천대학교-sw아카데미 6기-Azure OpenAI 기반 LLM을 활용한 고급 AI 솔루션 설계 및 구현
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Azure-workshop</title>
+</head>
+<body>
 
+  <h1>🚀 Azure-workshop</h1>
+  <p><strong>가천대학교 SW 아카데미 6기</strong> - Azure OpenAI 기반 LLM을 활용한 고급 AI 솔루션 설계 및 구현 워크숍 실습 코드입니다.</p>
+  <hr />
 
   <h1>📄 01.loader.py (LangChain 문서 로더 예제)</h1>
   <p><strong>LangChain</strong>을 활용하여 다양한 형식의 문서를 불러오는 예제입니다.</p>
@@ -18,8 +26,9 @@ pip install langchain langchain-core langchain-community
     <li><strong>CSV</strong> 파일: <code>CSVLoader</code></li>
   </ul>
 
+  <hr />
 
-    <h1>🤖 02.llm (Azure OpenAI 기반 LangChain LLM)</h1>
+  <h1>02.llm (Azure OpenAI 기반 LangChain LLM) 🤖</h1>
   <p>이 예제는 LangChain을 활용하여 Azure OpenAI LLM(GPT-4o-mini) 모델과 상호작용하는 방법을 보여줍니다.</p>
 
   <h2>📦 설치 패키지</h2>
@@ -67,3 +76,9 @@ llm = AzureChatOpenAI(
 )
 answer = llm.invoke("가천대의 흐트러진 벗꽃을 주제로 청춘과 낭만에 대한 시를 지어줘?")
   </code></pre>
+
+  <hr />
+  <p><em>📌 본 실습은 LangChain과 Azure OpenAI 기반 LLM을 실제 프로젝트에 적용하기 위한 실습 예제입니다.</em></p>
+
+</body>
+</html>
