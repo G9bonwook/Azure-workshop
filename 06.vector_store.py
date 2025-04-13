@@ -11,11 +11,10 @@ Original file is located at
 !pip install openai pypdf tiktoken chromadb
 
 import os
-import os
-os.environ["OPENAI_API_KEY"] = "GJyHLn0YlqiRiJcpc7iUUSFqCIqk7m7M0Q7MddzD1Y6tuQzQDLHcJQQJ99BDACYeBjFXJ3w3AAABACOGWtCc"
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://gacheon-llm-00001.openai.azure.com"
-os.environ["OPENAI_API_TYPE"] = "azure"
-os.environ["OPENAI_API_VERSION"] = "2024-07-18"
+os.environ["OPENAI_API_KEY"] = "{YOUR_API_KEY}"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "YOUR_API_ENDPOINT"
+os.environ["OPENAI_API_TYPE"] = "{YOUR_API_TYPE}"
+os.environ["OPENAI_API_VERSION"] = "{YOUR_API_VERSION}"
 
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
