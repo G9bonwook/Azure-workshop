@@ -17,3 +17,53 @@ pip install langchain langchain-core langchain-community
     <li><strong>Word (docx)</strong> 파일: <code>Docx2txtLoader</code></li>
     <li><strong>CSV</strong> 파일: <code>CSVLoader</code></li>
   </ul>
+
+
+    <h1>🤖 02.llm (Azure OpenAI 기반 LangChain LLM)</h1>
+  <p>이 예제는 LangChain을 활용하여 Azure OpenAI LLM(GPT-4o-mini) 모델과 상호작용하는 방법을 보여줍니다.</p>
+
+  <h2>📦 설치 패키지</h2>
+  <pre><code>
+pip install langchain langchain-core langchain-community
+pip install openai
+  </code></pre>
+
+  <h2>🔐 환경 변수 설정</h2>
+  <ul>
+    <li><code>OPENAI_API_KEY</code></li>
+    <li><code>AZURE_OPENAI_ENDPOINT</code></li>
+    <li><code>OPENAI_API_TYPE</code>: azure</li>
+    <li><code>OPENAI_API_VERSION</code>: 2023-05-15</li>
+  </ul>
+
+  <h2>🧪 주요 코드 기능</h2>
+
+  <h3>1. 기본 질의응답</h3>
+  <pre><code>
+from langchain.chat_models import AzureChatOpenAI
+
+llm = AzureChatOpenAI(model_name="dev-gpt-4o-mini")
+answer = llm.invoke("이순신 장군이 누구니?")
+print(answer.content)
+  </code></pre>
+
+  <h3>2. 시 생성 (창의성 조절)</h3>
+  <pre><code>
+llm = AzureChatOpenAI(model_name="dev-gpt-4o-mini", temperature=1)
+answer = llm.invoke("가천대의 흐트러진 벗꽃을 주제로 청춘과 낭만에 대한 시를 지어줘?")
+print(answer.content)
+  </code></pre>
+
+  <h3>3. 스트리밍 응답 출력</h3>
+  <pre><code>
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+
+llm = AzureChatOpenAI(
+    model_name="dev-gpt-4o-mini",
+    streaming=True,
+    callbacks=[StreamingStdOutCallbackHandler()],
+    temperature=1,
+    max_tokens=1000
+)
+answer = llm.invoke("가천대의 흐트러진 벗꽃을 주제로 청춘과 낭만에 대한 시를 지어줘?")
+  </code></pre>
