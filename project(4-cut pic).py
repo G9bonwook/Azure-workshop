@@ -25,10 +25,10 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
 import os
-os.environ["OPENAI_API_KEY"] = "G2PRojIueFtGUZc0SHf2E0xjooxgn3V9FZt1kl8r2UKpNFdeZAGNJQQJ99BDACYeBjFXJ3w3AAABACOGIMEc"
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://azure18-openai.openai.azure.com/"
-os.environ["OPENAI_API_TYPE"] = "azure"
-os.environ["OPENAI_API_VERSION"] = "2025-01-01-preview"
+os.environ["OPENAI_API_KEY"] = "{YOUR_API_KEY}"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "YOUR_API_ENDPOINT"
+os.environ["OPENAI_API_TYPE"] = "{YOUR_API_TYPE}"
+os.environ["OPENAI_API_VERSION"] = "{YOUR_API_VERSION}"
 
 from openai import AzureOpenAI
 
