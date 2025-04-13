@@ -12,10 +12,10 @@ Original file is located at
 
 import os
 
-os.environ["OPENAI_API_KEY"] = "FqS58pSUL1NvngffvVvxvYpwLm92Z3YotUc6LDgTPexWG7cSXEH1JQQJ99BDACfhMk5XJ3w3AAABACOGsB69"
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://gacheon-llm-001.openai.azure.com"
-os.environ["OPENAI_API_TYPE"] = "azure"
-os.environ["OPENAI_API_VERSION"] = "2023-05-15"
+os.environ["OPENAI_API_KEY"] = "{YOUR_API_KEY}"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "YOUR_API_ENDPOINT"
+os.environ["OPENAI_API_TYPE"] = "{YOUR_API_TYPE}"
+os.environ["OPENAI_API_VERSION"] = "{YOUR_API_VERSION}"
 
 from langchain.chat_models import AzureChatOpenAI
 
