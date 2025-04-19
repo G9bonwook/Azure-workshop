@@ -131,24 +131,3 @@ template = """
 </body>
 </html>
 
-flowchart LR
-  subgraph On-Premise Server
-    A[Spring Boot API 서버<br/>(일기 저장)] -->|TCP 3306| B[MySQL<br/>(binlog 활성화)]
-  end
-
-  subgraph GPU Server
-    C[Kafka Connect<br/>Source Connector] -->|디폴트 포트 9092| D[Kafka Broker Cluster]
-    D --> E[Python Consumer<br/>(감정 분석)]
-    E -->|TCP 27017| F[MongoDB Replica Set]
-  end
-
-  subgraph Cloud / VM
-    F --> G[Visualization Server<br/>(React / Grafana)]
-  end
-
-  B -->|binlog stream| C
-  D -->|diary-events 토픽| E
-  style On-Premise Server fill:#f9f,stroke:#333,stroke-width:1px
-  style GPU Server fill:#9ff,stroke:#333,stroke-width:1px
-  style Cloud / VM fill:#ff9,stroke:#333,stroke-width:1px
-
