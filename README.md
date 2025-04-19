@@ -2,7 +2,6 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Azure OpenAI 기반 LangChain 실습 프로젝트</title>
 </head>
 <body>
   <h1>🚀 Azure OpenAI 기반 LangChain 실습 프로젝트</h1>
@@ -131,3 +130,25 @@ template = """
   <p><em>본 워크숍은 실무에서 바로 응용 가능한 AI 기술을 중심으로 구성되었으며, 모든 코드는 LangChain + Azure 기반으로 작성되었습니다.</em></p>
 </body>
 </html>
+
+flowchart LR
+  subgraph On-Premise Server
+    A[Spring Boot API 서버<br/>(일기 저장)] -->|TCP 3306| B[MySQL<br/>(binlog 활성화)]
+  end
+
+  subgraph GPU Server
+    C[Kafka Connect<br/>Source Connector] -->|디폴트 포트 9092| D[Kafka Broker Cluster]
+    D --> E[Python Consumer<br/>(감정 분석)]
+    E -->|TCP 27017| F[MongoDB Replica Set]
+  end
+
+  subgraph Cloud / VM
+    F --> G[Visualization Server<br/>(React / Grafana)]
+  end
+
+  B -->|binlog stream| C
+  D -->|diary-events 토픽| E
+  style On-Premise Server fill:#f9f,stroke:#333,stroke-width:1px
+  style GPU Server fill:#9ff,stroke:#333,stroke-width:1px
+  style Cloud / VM fill:#ff9,stroke:#333,stroke-width:1px
+
